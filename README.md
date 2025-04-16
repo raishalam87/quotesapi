@@ -1,3 +1,8 @@
+https://quotesapi-2.onrender.com/api/auth/register
+https://quotesapi-2.onrender.com/api/auth/login
+https://quotesapi-2.onrender.com/api/quotes
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
