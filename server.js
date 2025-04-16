@@ -9,9 +9,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Root route (fixes "Cannot GET /" on Render)
+app.get('/', (req, res) => {
+  res.send('🚀 Quotes API is live and working!');
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
-  serverSelectionTimeoutMS: 30000, // Optional but helpful
+  serverSelectionTimeoutMS: 30000,
 })
 .then(() => {
   console.log('✅ MongoDB connected');
@@ -19,7 +24,6 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err) => {
   console.error('❌ MongoDB connection error:', err.message);
 });
-
 
 // Routes
 app.use('/api/quotes', require('./routes/quotes'));
